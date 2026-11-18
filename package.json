@@ -1,0 +1,48 @@
+{
+  "name": "buffet-manager-dad",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sistema de gestão de buffet e eventos para um computador",
+  "main": "src/main/main.js",
+  "type": "commonjs",
+  "author": "Projeto final - DAD",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis",
+    "check": "node --check src/main/main.js && node --check src/preload/preload.js && node --check src/main/database.js && node --check src/renderer/renderer.js",
+    "check:ts": "tsc --noEmit",
+    "build:ts": "tsc",
+    "db:init": "node scripts/init-mysql.js",
+    "test": "node tests/test-database.js"
+  },
+  "dependencies": {
+    "mysql2": "^3.24.6"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "electron": "^45.3.4",
+    "electron-builder": "^26.0.0",
+    "typescript": "^5.7.0"
+  },
+  "build": {
+    "appId": "br.com.buffetmanager.desktop",
+    "productName": "Buffet Manager",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "package.json",
+      "README.md",
+      "tests/**/*"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}

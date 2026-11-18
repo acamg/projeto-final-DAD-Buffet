@@ -1,0 +1,32 @@
+# Dependências
+node_modules/
+
+# Variáveis de ambiente e segredos (NUNCA commitar senhas e credenciais reais)
+.env
+.env.local
+.env.*.local
+
+# Builds, saídas de compilação e empacotamento
+dist/
+dist-ts/
+out/
+build/
+
+# Bancos de dados locais e arquivos de backup
+*.sqlite
+*.sqlite3
+*.db
+*.sql.bak
+buffet-backup.*
+
+# Logs de execução e erros
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Arquivos temporários de sistema e IDEs
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
